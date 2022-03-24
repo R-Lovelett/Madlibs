@@ -1,3 +1,6 @@
+light = "\033[96;4m" # Highlight user input text
+end= "\033[0;0m" #Remove highlight
+
 def newGame():
     print("Hello! Welcome to Madlibs!\n")
 
@@ -39,12 +42,12 @@ def shortStory():
         x += 1
 
     #Printed out final story
-    print(f"\nOur school cafeteria has really {adj_List[4]} food.")
-    print(f"Just thinking about it makes my stomach {verb_List[7]}. The spaghetti ")
-    print(f"is {adj_List[5]} and tastes like {noun_List[1]}. One day, I swear the meatballs")
-    print(f"started to {verb_List[8]}! The turkey tacos are totally {adj_List[6]} and kind")
-    print(f"of look like old {noun_List[2]}. Don't get me started on the hoagies, I")
-    print(f"would rather {verb_List[9]} to {noun_List[3]} before taking a bite of one!")
+    print(f"\nOur school cafeteria has really {light}{adj_List[4]}{end} food.")
+    print(f"Just thinking about it makes my stomach {light}{verb_List[7]}{end}. The spaghetti ")
+    print(f"is {light}{adj_List[5]}{end} and tastes like {light}{noun_List[1]}{end}. One day, I swear the meatballs")
+    print(f"started to {light}{verb_List[8]}{end}! The turkey tacos are totally {light}{adj_List[6]}{end} and kind")
+    print(f"of look like old {light}{noun_List[2]}{end}. Don't get me started on the hoagies, I")
+    print(f"would rather {light}{verb_List[9]}{end} to {light}{noun_List[3]}{end} before taking a bite of one!")
 
     while True:
         try: 
@@ -70,19 +73,19 @@ def medStory():
     clothing = ""
     x = 1
 
-    print("Time for a medium story!\nPlease answer the following "
+    print("\nTime for a medium story!\nPlease answer the following "
         "prompts in order to complete the story!\nThere will "
         "be some more unique prompts in this one!\n")
 
     while x < 23:
         if x < 6:
-            noun_List[x] = input("Enter a noun: ").upper() # 1-5
+            noun_List[x] = input("Enter a noun: ").upper() # Keys: 1-5
         if x < 13 and x >= 6:
-            adj_List[x] = input("Enter an adjective: ").upper() # 6-12
+            adj_List[x] = input("Enter an adjective: ").upper() # Keys: 6-12
         if x < 16 and x >= 13:
-            verb_List[x] = input("Enter a verb: ").upper() # 13-15
+            verb_List[x] = input("Enter a verb: ").upper() # Keys: 13-15
         if x < 19 and x >= 16:
-            past_Verb[x] = input("Enter a verb in the past tense: ").upper() # 16-18
+            past_Verb[x] = input("Enter a verb in the past tense: ").upper() # Keys: 16-18
         if x == 19:
             food = input("Enter favorite food item: ").upper() 
         if x == 20:
@@ -93,15 +96,15 @@ def medStory():
             clothing = input("Enter a piece of clothing (Ex: shirt): ").upper()
         x += 1
 
-    print(f"\nIt was a {adj_List[6]} sunny day. {noun_List[1]} and I were excited to go camping at {place}.")
-    print(f"It was my first time going there. I packed my favorite {clothing}. It is {adj_List[7]}")
-    print(f"and {adj_List[8]}, perfect for camping! On the road we went in our {adj_List[9]} {adj_List[10]} van! We were")
-    print(f"listening to {song} all the way down. The drive was about 5 hours but it was")
-    print(f"so worth it. When we got there we unpacked the van. I could smell {food} being cooked.")
-    print(f"It smelled {adj_List[11]}. I {past_Verb[16]} to the room I was staying in with my {noun_List[2]}. The next")
-    print(f"thing I knew, {noun_List[3]} came and {past_Verb[17]} on the bed. I heard my mom scream, \"Get off the bed!\"")
-    print(f"I {past_Verb[18]} outside. I saw {noun_List[4]}. It was {noun_List[5]}. Over the next few days I got to {verb_List[13]},")
-    print(f"{verb_List[14]}, and {verb_List[15]}. My camping trip was {adj_List[12]}.")
+    print(f"\nIt was a {light}{adj_List[6]}{end} sunny day. {light}{noun_List[1]}{end} and I were excited to go camping at {light}{place}{end}.")
+    print(f"It was my first time going there. I packed my favorite {light}{clothing}{end}. It is {light}{adj_List[7]}{end}")
+    print(f"and {light}{adj_List[8]}{end}, perfect for camping! On the road we went in our {light}{adj_List[9]}{end} {light}{adj_List[10]}{end} van! We were")
+    print(f"listening to {light}{song}{end} all the way down. The drive was about 5 hours but it was")
+    print(f"so worth it. When we got there we unpacked the van. I could smell {light}{food}{end} being cooked.")
+    print(f"It smelled {light}{adj_List[11]}{end}. I {light}{past_Verb[16]}{end} to the room I was staying in with my {light}{noun_List[2]}{end}. The next")
+    print(f"thing I knew, {light}{noun_List[3]}{end} came and {light}{past_Verb[17]}{end} on the bed. I heard my mom scream, \"Get off the bed!\"")
+    print(f"I {light}{past_Verb[18]}{end} outside. I saw {light}{noun_List[4]}{end}. It was {noun_List[5]}. Over the next few days I got to {light}{verb_List[13]}{end},")
+    print(f"{light}{verb_List[14]}{end}, and {light}{verb_List[15]}{end}. My camping trip was {light}{adj_List[12]}{end}.")
 
     while True:
         try: 

@@ -10,6 +10,7 @@ TBD
 # Future Expansion
 - [x] Prompt to select a story
 - [ ] More stories
-- [ ] Play again option
+- [x] Play again option
 - [ ] Random story selection perhaps?
-- [ ] Highlight user answers in printed stories
+- [x] Highlight user answers in printed stories
+- [ ] More efficient highlight system?
