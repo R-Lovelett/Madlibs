@@ -6,7 +6,7 @@ def newGame():
         try:
             print("1. Short story")
             print("2. Medium story\n")
-            storySelect = int(input("Select a story that you would like to use:"))
+            storySelect = int(input("Select a story that you would like to use (#): "))
         except ValueError: # If somehow the input isnt recognized, loop again
             print("Sorry, I didn't understand that. Please try again.")
             continue
@@ -26,16 +26,16 @@ def shortStory():
     x = 1
 
     print("Time for a short story!\nPlease answer the following "
-        "prompts in order to complete the story!")
+        "prompts in order to complete the story!\n")
 
     # Ask user for 3 of each category: nouns, adjectives, and verbs
     while x < 10:
         if x <= 3:
-            noun_List[x] = input("Enter a noun: ")
+            noun_List[x] = input("Enter a noun: ").upper()
         if x <= 6 and x > 3:
-            adj_List[x] = input("Enter a adjective: ")
+            adj_List[x] = input("Enter a adjective: ").upper()
         if x <= 9 and x > 6:
-            verb_List[x] = input("Enter a verb: ")
+            verb_List[x] = input("Enter a verb: ").upper()
         x += 1
 
     #Printed out final story
@@ -46,9 +46,20 @@ def shortStory():
     print(f"of look like old {noun_List[2]}. Don't get me started on the hoagies, I")
     print(f"would rather {verb_List[9]} to {noun_List[3]} before taking a bite of one!")
 
-def medStory():
-    print("Medium story here.")
+    while True:
+        try: 
+            response = input("\nDo you want to play again? ").lower()
+        except ValueError:
+            print("Sorry, I didn't understand that. Please try again.")
+            continue
 
+        if response == "y" or response == "yes":
+            newGame()
+            break
+        elif response == "n" or response == "no":
+            break
+
+def medStory():
     noun_List = {} #There are 5 nouns
     adj_List = {} #There are 7 adjectives
     past_Verb = {} #There are 3 past verbs
@@ -59,26 +70,28 @@ def medStory():
     clothing = ""
     x = 1
 
+    print("Time for a medium story!\nPlease answer the following "
+        "prompts in order to complete the story!\nThere will "
+        "be some more unique prompts in this one!\n")
+
     while x < 23:
         if x < 6:
-            noun_List[x] = input("Enter a noun: ") # 1-5
+            noun_List[x] = input("Enter a noun: ").upper() # 1-5
         if x < 13 and x >= 6:
-            adj_List[x] = input("Enter an adjective: ") # 6-12
+            adj_List[x] = input("Enter an adjective: ").upper() # 6-12
         if x < 16 and x >= 13:
-            verb_List[x] = input("Enter a verb: ") # 13-15
+            verb_List[x] = input("Enter a verb: ").upper() # 13-15
         if x < 19 and x >= 16:
-            past_Verb[x] = input("Enter a verb in the past tense: ") # 16-18
+            past_Verb[x] = input("Enter a verb in the past tense: ").upper() # 16-18
         if x == 19:
-            food = input("Enter favorite food item: ") 
+            food = input("Enter favorite food item: ").upper() 
         if x == 20:
-            place = input("Enter a place: ")
+            place = input("Enter a place: ").upper()
         if x == 21:
-            song = input("Enter the name of a song: ")
+            song = input("Enter the name of a song: ").upper()
         if x == 22:
-            clothing = input("Enter a piece of clothing (Ex: shirt): ")
+            clothing = input("Enter a piece of clothing (Ex: shirt): ").upper()
         x += 1
-
-    # TODO add story here
 
     print(f"\nIt was a {adj_List[6]} sunny day. {noun_List[1]} and I were excited to go camping at {place}.")
     print(f"It was my first time going there. I packed my favorite {clothing}. It is {adj_List[7]}")
@@ -89,5 +102,18 @@ def medStory():
     print(f"thing I knew, {noun_List[3]} came and {past_Verb[17]} on the bed. I heard my mom scream, \"Get off the bed!\"")
     print(f"I {past_Verb[18]} outside. I saw {noun_List[4]}. It was {noun_List[5]}. Over the next few days I got to {verb_List[13]},")
     print(f"{verb_List[14]}, and {verb_List[15]}. My camping trip was {adj_List[12]}.")
+
+    while True:
+        try: 
+            response = input("\nDo you want to play again? ").lower()
+        except ValueError:
+            print("Sorry, I didn't understand that. Please try again.")
+            continue
+
+        if response == "y" or response == "yes":
+            newGame()
+            break
+        elif response == "n" or response == "no":
+            break
 
 newGame()
